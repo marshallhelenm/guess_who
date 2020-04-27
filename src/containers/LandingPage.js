@@ -12,20 +12,18 @@ class LandingPage extends Component {
     }
   };
   render() {
-    console.log('LandingPage props: ', this.props)
+    console.log("LandingPage props: ", this.props);
     return (
-      <div className="App">
-        <header className="App-header">
+        <header className="primary-style">
           <img
             src="https://res.cloudinary.com/dwfqeeh5f/image/upload/v1587956910/Guessy/question-1243504_1280.png"
-            alt="a question mark"
-            className="App-logo"
+            alt="a spinning question mark"
+            className="Guessy-logo"
           />
           <h1>Guessy</h1>
-          <Button onClick={this.handleClick("new")}>Play</Button>
-          <Button onClick={this.handleClick("active")}>Join Game</Button>
+          <Button onClick={() => this.handleClick("new")}>Play</Button>
+          <Button onClick={() => this.handleClick("active")}>Join Game</Button>
         </header>
-      </div>
     );
   }
 }

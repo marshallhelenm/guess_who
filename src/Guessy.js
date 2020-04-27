@@ -1,16 +1,19 @@
-import React, { Route, Component } from "react";
+import React, { Component } from "react";
 import "./App.css";
 import LandingPage from "./containers/LandingPage";
 import NewGame from "./containers/NewGame";
 import PlayGame from "./containers/PlayGame";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class Guessy extends Component {
-  render(props) {
-    console.log("Guessy Props: ", props);
+  constructor() {
+    super();
+    this.state = {};
+  }
+  render() {
+    console.log("Guessy Props: ", this.props);
     return (
-      <div className="App">
-        <LandingPage {...props} />
+      <div className="primary-style">
         <Router>
           <Route
             path="/"
