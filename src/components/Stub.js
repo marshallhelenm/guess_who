@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, Image, Button } from "semantic-ui-react";
 
-class Card extends Component {
+class Stub extends Component {
   flipDown = () => {
       //TODO: a function to change styling on the relevant card to grey it out or put a red x over it or something
   };
@@ -29,4 +29,4 @@ class Card extends Component {
   }
 }
 
-export default Card;
+export default Stub;

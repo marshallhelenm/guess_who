@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "../App.css";
-import { Button } from "semantic-ui-react";
-
+import Board from "./Board";
 class PlayGame extends Component {
   render() {
     return (
-        <div className="primary-style">
-          
-        </div>
+      <div className="primary-style">
+        <Board player="Your"/>
+        <Board player="Their"/>
+      </div>
     );
   }
 }
