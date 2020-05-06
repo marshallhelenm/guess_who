@@ -12,7 +12,7 @@ class Stub extends Component {
   }
 
   render() {
-    let url = this.props.img.url;
+    let url = this.props.img;
     let title = this.props.img.title;
     return (
       <Card>

@@ -12,8 +12,11 @@ class NewGame extends Component {
         <h1>Choose a Category</h1>
         <div>
           <Button onClick={() => this.startGame()}>Memes</Button>
-          <Button onClick={() => this.startGame()}>HP Characters</Button>
-          <Button onClick={() => this.startGame()}>Historical Figures</Button>
+          <div>
+            <h1>Other Options Coming Soon!</h1>
+            <Button onClick={() => this.startGame()}>HP Characters</Button>
+            <Button onClick={() => this.startGame()}>Historical Figures</Button>
+          </div>
         </div>
       </div>
     );

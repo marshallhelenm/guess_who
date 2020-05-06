@@ -10,6 +10,8 @@ class Guessy extends Component {
     super();
     this.state = {};
   }
+
+
   render() {
     console.log("Guessy Props: ", this.props);
     return (
