@@ -1,37 +1,36 @@
 import React, { Component } from "react";
 import Stub from "../components/Stub";
+import "../css/board.css";
 
 // holds all the picture cards
-class Board extends Component {
-  generateCards() {
-    let memes = this.props.items || [];
+const Board = (props) => {
+  const generateCards = () => {
+    let memes = props.items || [];
     console.log("memes in board: ", memes);
-
 
     let cards = memes.map((item) => {
       console.log("item: ", item);
       return (
         <Stub
-          img={item.img}
+          item={item}
           key={item.title + "." + Math.random() * 10}
           id={item.id}
+          class="stub"
         />
       );
     });
     return cards;
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        <div>
-          <h1>{this.props.player} Board</h1>
-          {this.generateCards()}
-        </div>
-        {/* in future a way to render the names of the player? Maybe more effort than it's worth */}
+  return (
+    <>
+      <div class="board-page">
+        <h1>{props.player} Board</h1>
+        <div class="ui four cards board">{generateCards()}</div>
       </div>
-    );
-  }
-}
+      {/* in future a way to render the names of the player? Maybe more effort than it's worth */}
+    </>
+  );
+};
 
 export default Board;

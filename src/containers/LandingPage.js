@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../App.css";
+import "../css/App.css";
 import { Button } from "semantic-ui-react";
 
 //The first page you see. Holds options to join a game or start a new game.
