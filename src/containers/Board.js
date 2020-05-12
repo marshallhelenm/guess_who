@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Stub from "../components/Stub";
 import "../css/board.css";
 
@@ -6,10 +6,10 @@ import "../css/board.css";
 const Board = (props) => {
   const generateCards = () => {
     let memes = props.items || [];
-    console.log("memes in board: ", memes);
+    // console.log("memes in board: ", memes);
 
     let cards = memes.map((item) => {
-      console.log("item: ", item);
+      // console.log("item: ", item);
       return (
         <Stub
           item={item}
@@ -24,9 +24,9 @@ const Board = (props) => {
 
   return (
     <>
-      <div class="board-page">
+      <div className="board-page">
         <h1>{props.player} Board</h1>
-        <div class="ui four cards board">{generateCards()}</div>
+        <div className="ui four cards board">{generateCards()}</div>
       </div>
       {/* in future a way to render the names of the player? Maybe more effort than it's worth */}
     </>

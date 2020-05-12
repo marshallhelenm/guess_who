@@ -1,6 +1,7 @@
 .stub {
   display: flex;
   float: left;
+  height: 100%;
 }
 
 .board {
@@ -18,4 +19,8 @@
 
 .stub-bar{
   /* height: 20%; */
+}
+
+.eliminated{
+
 }

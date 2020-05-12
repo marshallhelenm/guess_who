@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./css/App.css";
 import LandingPage from "./containers/LandingPage";
 import NewGame from "./containers/NewGame";
