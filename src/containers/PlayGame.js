@@ -8,7 +8,7 @@ const PlayGame = () => {
 
   const fetchMemes = () => {
     // console.log("accessing my api");
-    fetch("http://localhost:4000/memes")
+    fetch("http://localhost:5000/memes")
       .then((res) => res.json())
       .then((memes) => {
         localStorage.setItem("memes", JSON.stringify(memes));

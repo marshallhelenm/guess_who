@@ -4,20 +4,31 @@ import { Card, Button, Dimmer, Header, Icon } from "semantic-ui-react";
 const Stub = (props) => {
   const [dimmer, setDimmer] = useState(false);
 
+  const stubStatus = (id, status) => { // status of true means dimmed, false means not dimmed
+    localStorage.setItem(id, status);
+    status === 'dimmed' ? setDimmer(true) : setDimmer(false)
+  }
+
   const flipDown = (e) => {
-    //TODO: a function to change styling on the relevant card to grey it out or put a red x over it or something
     e.preventDefault();
-    console.log("flipDown");
-    setDimmer(true);
+    stubStatus(props.item.id, 'dimmed')
   };
 
   const flipUp = (e) => {
-    //TODO: a function to change styling on the relevant card to reverse the flipdown
+    // a function to change styling on the relevant card to reverse the flipdown
     e.preventDefault();
-    console.log("flipUp");
-
-    setDimmer(false);
+    stubStatus(props.item.id, 'visible')
   };
+
+  useEffect(()=>{
+    if (localStorage.getItem(props.item.id) === 'dimmed'){
+      console.log(localStorage.getItem(props.item.id))
+      setDimmer(true)
+    } else {
+      setDimmer(false)
+    }
+  })
+
 
   const confirmGuess = () => {
     //TODO: a function to prompt the user on whether or not they really want to guess that card
@@ -27,7 +38,7 @@ const Stub = (props) => {
   let title = props.item.title;
 
   return (
-    <Card className="Stub" stackable={"true"}>
+    <Card className="Stub" stackable={"true"} id={props.item.id}>
       {/* TODO: look into fixing stackable */}
       <div className="ui image stub-image">
         <Dimmer.Dimmable active={dimmer}>
