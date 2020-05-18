@@ -33,3 +33,7 @@
     transform: rotate(360deg);
   }
 }
+
+.origin-link{
+  color: black;
+}

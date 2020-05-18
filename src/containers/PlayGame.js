@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/App.css";
 import Board from "./Board";
+import QuestionsModal from "../components/QuestionsModal";
 
 //the page you see while actually playing the game
 const PlayGame = () => {
@@ -23,6 +24,7 @@ const PlayGame = () => {
 
   return (
     <div className="primary-style">
+      <QuestionsModal />
       <Board items={memeCollection || []} />
     </div>
   );
