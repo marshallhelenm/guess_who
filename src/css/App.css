@@ -5,7 +5,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .Guessy-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: Guessy-logo-spin infinite 20s linear;
   }
 }
 

@@ -11,7 +11,7 @@ const QuestionsModal = () => {
   ];
 
   return (
-    <Modal trigger={<Button>Question Ideas</Button>} centered={false}>
+    <Modal trigger={<Button>Question Ideas</Button>} centered={false} closeIcon>
       <Modal.Header>Question Ideas</Modal.Header>
       <Modal.Content>
         <Modal.Description>
