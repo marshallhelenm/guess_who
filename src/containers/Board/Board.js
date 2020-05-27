@@ -1,6 +1,6 @@
 import React from "react";
-import Stub from "../components/Stub";
-import "../css/board.css";
+import Stub from "../../components/Stub";
+import "./board.css";
 import Columns from "react-columns";
 
 // holds all the picture cards

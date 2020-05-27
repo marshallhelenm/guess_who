@@ -1,11 +1,11 @@
 import React from "react";
-import "./css/App.css";
-import LandingPage from "./containers/LandingPage";
-import NewGame from "./containers/NewGame";
-import PlayGame from "./containers/PlayGame";
+import "./App.css";
+import LandingPage from "../containers/LandingPage";
+import NewGame from "../containers/NewGame";
+import PlayGame from "../containers/PlayGame";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Chat from "./components/Chat";
-import Join from "./components/Join";
+import Chat from "../components/Chat/Chat.js";
+import Join from "../components/Join/Join.js";
 
 const Guessy = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/App.css";
+import "../App/App.css";
 import { Button } from "semantic-ui-react";
 
 class NewGame extends Component {

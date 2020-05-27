@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Button, Dimmer, Header, Icon } from "semantic-ui-react";
-import "../css/App.css";
+import "../App/App.css";
 
 
 const Stub = (props) => {
@@ -29,7 +29,7 @@ const Stub = (props) => {
     } else {
       setDimmer(false);
     }
-  });
+  }, [props.item.id]);
 
   const confirmGuess = () => {
     //TODO: a function to prompt the user on whether or not they really want to guess that card

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../css/App.css";
-import Board from "./Board";
+import "../App/App.css";
+import Board from "./Board/Board.js";
 import QuestionsModal from "../components/QuestionsModal";
 
 //the page you see while actually playing the game
