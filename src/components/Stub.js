@@ -3,7 +3,7 @@ import { Card, Button, Dimmer, Header, Icon } from "semantic-ui-react";
 import "../App/App.css";
 
 
-const Stub = (props) => {
+const Stub = ({item}) => {
   const [dimmer, setDimmer] = useState(false);
 
   const stubStatus = (id, status) => {
@@ -14,36 +14,36 @@ const Stub = (props) => {
 
   const flipDown = (e) => {
     e.preventDefault();
-    stubStatus(props.item.id, "dimmed");
+    stubStatus(item.id, "dimmed");
   };
 
   const flipUp = (e) => {
     // a function to change styling on the relevant card to reverse the flipdown
     e.preventDefault();
-    stubStatus(props.item.id, "visible");
+    stubStatus(item.id, "visible");
   };
 
   useEffect(() => {
-    if (localStorage.getItem(props.item.id) === "dimmed") {
+    if (localStorage.getItem(item.id) === "dimmed") {
       setDimmer(true);
     } else {
       setDimmer(false);
     }
-  }, [props.item.id]);
+  }, [item.id]);
 
   const confirmGuess = () => {
     //TODO: a function to prompt the user on whether or not they really want to guess that card
     // brings up a modal
   };
-  let url = props.item.img;
-  let title = props.item.title;
+  let url = item.img;
+  let title = item.title;
 
   return (
-    <Card className="Stub" stackable={"true"} id={props.item.id}>
+    <Card className="Stub" stackable={"true"} id={item.id}>
       {/* TODO: look into fixing stackable */}
       <div className="ui image stub-image">
         <Dimmer.Dimmable active={dimmer}>
-          <img src={url} />
+          <img src={url} alt={item.alt} />
           <Dimmer active={dimmer} onClickOutside={flipUp}>
             <Header as="h2" icon inverted>
               <Icon name="x" size="big" color="red" onClick={flipUp} />
@@ -53,7 +53,7 @@ const Stub = (props) => {
       </div>
       <Card.Content className="stub-bar">
         <Card.Header>
-          <a href={props.item.origin} target="_blank" className="origin-link">
+          <a href={item.origin} target="_blank" rel="noopener noreferrer" className="origin-link">
             <h3>{title}</h3>
           </a>
         </Card.Header>
