@@ -8,7 +8,7 @@ const Join = () => {
   return (
     <div className="joinOuterContainer">
       <div className="joinInnerContainer">
-        <h1 className="heading">Join</h1>
+        <h1 className="heading">Create or Join Game</h1>
         <div>
           <input
             placeholder="Name"
@@ -21,7 +21,7 @@ const Join = () => {
         </div>
         <div>
           <input
-            placeholder="Room"
+            placeholder="Room Name"
             className="joinInput mt-20"
             type="text"
             onChange={(e) => {
@@ -33,7 +33,7 @@ const Join = () => {
           onClick={(e) => {
             if (!name || !room) e.preventDefault();
           }}
-          to={`/chat?name=${name}&room=${room}`}
+          to={`/play?name=${name}&room=${room}`}
         >
           <button className="button mt-20" type="submit">
             Sign In
