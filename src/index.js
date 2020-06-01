@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import "semantic-ui-css/semantic.min.css";
 import Guessy from "./App/Guessy";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(<Guessy />, document.getElementById("root"));
 

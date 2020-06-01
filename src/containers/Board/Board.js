@@ -9,13 +9,13 @@ const Board = (props) => {
     let memes = props.items || [];
 
     let cards = memes.map((item) => {
-      return (
+      return item ? (
         <Stub
           item={item}
           key={item.title + "." + Math.random() * 10}
           class="stub"
         />
-      );
+      ) : null
     });
     return cards;
   };

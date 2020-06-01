@@ -3,11 +3,11 @@ import { Button, Modal } from "semantic-ui-react";
 
 const QuestionsModal = () => {
   const qs = [
-    "Hypothetically, would I go on a date with this __?",
-    "Would I relate to this __?",
-    "Would I be attracted to this __?",
+    "Hypothetically, would I go on a date with this meme?",
+    "Would I relate to this meme?",
+    "Would I be attracted to this meme?",
     "Would I want this person to fight alongside me during the apocalypse?",
-    "Would this meme be my sidekick?",
+    "Would this meme be my sidekick?"
   ];
 
   return (
