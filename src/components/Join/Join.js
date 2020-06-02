@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button, Input } from "semantic-ui-react";
 import "./Join.css";
 
-const Join = () => {
+const Join = ({history}) => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
+
+  // const generateRoomKey = () => {
+  //   let key = Math.random().toString(36).substring(7);
+  //   localStorage.setItem("roomkey", JSON.stringify({ room, key }));
+  //   return key;
+  // };
+
   return (
     <div className="joinOuterContainer">
       <div className="joinInnerContainer">
         <h1 className="heading">Create or Join Game</h1>
         <div>
-          <input
+          <Input
             placeholder="Name"
-            className="joinInput"
             type="text"
             onChange={(e) => {
               setName(e.target.value);
@@ -20,9 +27,8 @@ const Join = () => {
           />
         </div>
         <div>
-          <input
+          <Input
             placeholder="Room Name"
-            className="joinInput mt-20"
             type="text"
             onChange={(e) => {
               setRoom(e.target.value);
@@ -35,9 +41,7 @@ const Join = () => {
           }}
           to={`/play?name=${name}&room=${room}`}
         >
-          <button className="button mt-20" type="submit">
-            Sign In
-          </button>
+          <Button type="submit">Sign In</Button>
         </Link>
       </div>
     </div>

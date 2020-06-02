@@ -11,7 +11,17 @@ const ENDPOINT = "http://localhost:5000/";
 
 let socket;
 
-const Chat = ({ location }) => {
+const joinSocket = (name, room, history) => {
+  socket.emit("join", { name, room }, (error) => {
+    if (error) {
+      console.log("error! ", error);
+      history.push("join");
+      alert(error);
+    }
+  });
+};
+
+const Chat = ({ history, location }) => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [message, setMessage] = useState("");
@@ -28,7 +38,7 @@ const Chat = ({ location }) => {
     setRoom(room);
 
     console.log(socket);
-    socket.emit("join", { name, room }, () => {});
+    joinSocket(name, room, history);
 
     return () => {
       socket.emit("disconnect");
@@ -42,16 +52,12 @@ const Chat = ({ location }) => {
     });
   }, [messages]);
 
-
   useEffect(() => {
     socket.on("roomData", (data) => {
-      console.log('data.users', data.users)
+      console.log("data.users", data.users);
       setUsersInRoom([...usersInRoom, ...data.users]);
     });
   }, [usersInRoom]);
-
-
-
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -79,3 +85,4 @@ const Chat = ({ location }) => {
 };
 
 export default Chat;
+export { Chat, joinSocket };
