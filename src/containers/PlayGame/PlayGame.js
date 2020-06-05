@@ -4,7 +4,7 @@ import "../../App/App.css";
 import "./PlayGame.css";
 import Board from "../Board/Board.js";
 import QuestionsModal from "../../components/QuestionsModal";
-import {Chat} from "../../components/Chat/Chat";
+import Chat from "../../components/Chat/Chat";
 import ClearGame from "../../components/ClearGame/ClearGame";
 
 //the page you see while actually playing the game
@@ -52,11 +52,11 @@ const PlayGame = (props) => {
     <div className="playGame">
       <div className="gameBoard">
             <h3>Room Name: {room}</h3>
-        <div class="row">
-          <div class="column-md-6">
+        <div className="row">
+          <div className="column-md-6">
             <QuestionsModal />
           </div>
-          <div class="column-md-6">
+          <div className="column-md-6">
             <ClearGame name={name} room={room} fetchMemes={fetchMemes} />
           </div>
         </div>

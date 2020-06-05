@@ -1,12 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Input } from "semantic-ui-react";
 import "./Join.css";
+import io from "socket.io-client";
+const ENDPOINT = "http://localhost:5000/";
 
-const Join = ({history}) => {
+let socket;
+
+const Join = ({ history }) => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
 
+  const joinGame = () => {
+    socket = io(ENDPOINT);
+    socket.emit("join", { name, room }, (error) => {
+      if (error) {
+        console.log("error! ", error);
+        history.push("join");
+        alert(error);
+      } else {
+        history.push(`/play?name=${name}&room=${room}`);
+      }
+    });
+  };
   // const generateRoomKey = () => {
   //   let key = Math.random().toString(36).substring(7);
   //   localStorage.setItem("roomkey", JSON.stringify({ room, key }));
@@ -35,14 +51,9 @@ const Join = ({history}) => {
             }}
           />
         </div>
-        <Link
-          onClick={(e) => {
-            if (!name || !room) e.preventDefault();
-          }}
-          to={`/play?name=${name}&room=${room}`}
-        >
-          <Button type="submit">Sign In</Button>
-        </Link>
+        <Button type="submit" onClick={joinGame}>
+          Sign In
+        </Button>
       </div>
     </div>
   );
